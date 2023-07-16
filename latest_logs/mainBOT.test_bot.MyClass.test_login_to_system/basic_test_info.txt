@@ -1,0 +1,16 @@
+mainBOT/test_bot.py::MyClass::test_login_to_system
+--------------------------------------------------------------------
+Last Page: https://app.cafcsn.it/#/pages/customers/edit/60565
+ Duration: 149.32s
+  Browser: Chrome 114.0.5735.199
+   Driver: chromedriver 114.0.5735.90
+Timestamp: 1689504753  (Unix Timestamp)
+     Date: Sunday, 16 July 2023
+     Time: 4:52:33 PM  (Bangladesh Standard Time, UTC+06:00)
+--------------------------------------------------------------------
+Traceback:
+  File "C:\webscrap\mainBOT\test_bot.py", line 74, in test_login_to_system
+    customertype = s.first_selected_option
+  File "C:\webscrap\env\lib\site-packages\selenium\webdriver\support\select.py", line 62, in first_selected_option
+    raise NoSuchElementException("No options are selected")
+Exception: Message: No options are selected; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
