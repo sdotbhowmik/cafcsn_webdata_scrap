@@ -5,7 +5,6 @@ from config.config import DataConfig
 
 wb = Workbook()
 
-
 class CollectIDs(BaseCase):
 
     def test_collect_ids(self):
@@ -29,7 +28,9 @@ class CollectIDs(BaseCase):
 
             # Excel operation
             ws = wb.active
-            ws['A1'] = 'customerid'  # Header for IDs
+            ws['A1'] = 'customerid'  # Header for customer ID
+            ws['B1'] = 'pagenumber'  # Header for page number
+            ws['C1'] = 'status'  # Header for status
 
             pagination_no = DataConfig.PageNumber
             counter = 1
@@ -41,17 +42,16 @@ class CollectIDs(BaseCase):
                 for i in range(1, 21):
                     try:
                         list_element = self.get_text("//tbody/tr[%s]/td[1]" % str(i))
-                        ws.append([list_element])
+                        ws.append([list_element, p, "Pending"])
                         counter += 1
-                        print(f"Collected Client ID: {list_element}")
+                        print(f"Collected Client ID: {list_element} from Page: {p}")
                     except Exception as e:
                         print(f"An error occurred while collecting ID on page {p}, row {i}: {e}")
 
             # Save IDs to the Excel file
             wb.save("client_ids.xlsx")
-            print("Phase1: Completed, client_ids.xlsx updated correctly")
+            print("Phase 1: Completed, client_ids.xlsx updated correctly")
             print("Now you need to run phase2.py")
-
 
         except Exception as e:
             print(f"An error occurred during ID collection: {e}")

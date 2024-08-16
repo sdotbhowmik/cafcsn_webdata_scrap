@@ -1,4 +1,4 @@
 class DataConfig():
     Email = 'waliullah.nurany@gmail.com'
     Password = 'BHUIYAN@2021'
-    PageNumber = 5 #enter number of page available in the system : default value=2
+    PageNumber = 11 #enter number of page available in the system : default value=2
